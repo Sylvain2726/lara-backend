@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ProduitController extends Controller
 {
     public function index(Request $request){
-        $produits = Produit::query()->where('nom', 'like', '%' . $request->get('nom') . '%')->paginate();
+        $produits = Produit::query()->paginate();
         return response()->json($produits);
     }
 
