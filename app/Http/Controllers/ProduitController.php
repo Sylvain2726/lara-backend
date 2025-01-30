@@ -31,8 +31,8 @@ class ProduitController extends Controller
         return response()->json($produit);
     }
 
-    public function update(Request $request, Produit $produit){
-        //$produit = Produit::find($id);
+    public function update(Request $request, $id){
+        $produit = Produit::find($id);
         $produit->update($request->all());
         return response()->json([
             'produit'=>$produit,
